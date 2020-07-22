@@ -1,0 +1,288 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5994d9;
+    padding-top: 80px;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.5;
+    color: #585858;
+    text-transform: uppercase;
+}
+
+.todolist-wraper {
+    margin: 0 auto;
+    padding: 20px 40px 10px;
+    width: 1140px;
+    height: 566px;
+    background-color: #ffffff;
+}
+
+.flex-block {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.user-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: url(./images/JPEG_20200527_121137.jpg);
+}
+
+.task-status {
+    width: 65%;
+}
+
+.task-status__block {
+    width: 96px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;    
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.total {
+    color: #5231AE;
+    background-color: #D6C9D8;
+}
+
+.success {
+    color: #169357;
+    background-color: #9AEEBB;
+}
+
+.pending {
+    color: #DE3838;
+    background-color: #F1B1B1;
+}
+
+.filter {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9AEEBB;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.5;
+    color: #B92121;
+}
+
+.filter::placeholder {
+    color: #B92121;
+}
+
+.filter:focus {
+    outline: none;
+}
+
+.filter-wraper {
+    position: relative;
+}
+
+.filter-wraper::after {
+    content: '➜';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    transform: translateY(-50%);
+}
+
+.task-list {
+    padding: 40px 20px;
+    max-height: 300px;
+    min-height: 300px;
+    overflow: auto;
+}
+
+.task-list__item {
+    display: flex;
+    align-items: center;
+}
+
+.task-list__item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.task-list__item>label {
+    width: 98%;
+    display: flex;
+    align-items: center;
+}
+
+[name="checkbox"] {
+    display: none;
+}
+
+.task-list__item__title {
+    width: 60%;
+}
+
+.task-list__item__priority {
+    width: 18%;
+    padding-left: 35px;
+}
+
+.low, .medium, .high {
+    position: relative;
+}
+
+.low::before {
+    background-color: #4764C9;
+}
+
+.medium::before {
+    background-color: #F1AE00;
+}
+
+.high::before {
+    background-color: #D10C0C;
+}
+
+.low::before, .medium::before, .high::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.task-list__item__date {
+    width: 15%;
+}
+
+.task-list__item__date>img {
+    margin-right: 20px;
+}
+
+.task-list__item__status {
+    width: 2%;
+    margin: 0 15px;
+    height: 18px;
+    border: 2px solid #B3F2CC;
+    position: relative;
+}
+
+.task-list__item__status::before {
+    content: '✔';
+    display: none;
+    position: absolute;
+    top: -6px;
+    left: 2px;
+    color: #B3F2CC;
+}
+
+[name="checkbox"]:checked ~ .task-list__item__status::before {
+    display: block;
+}
+
+[name="checkbox"]:checked ~ .task-list__item__title,
+[name="checkbox"]:checked ~ .task-list__item__priority,
+[name="checkbox"]:checked ~ .task-list__item__date {
+    text-decoration: line-through;
+}
+
+
+.clear-all {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4DC97E;
+}
+
+.add-task {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #DC5252;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(230, 230, 230, 0.8);
+    display: none;
+}
+
+.open {
+    display: block;
+}
+
+.body-task {
+    padding-top: 80px;
+}
+
+.task {
+    background-color: #5994d9;
+    max-width: 328px;
+    min-height: 304px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.task__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #67D292;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 13px;
+}
+
+.task__block {
+    margin: 8px 34px 32px 34px;
+}
+
+.task__item {
+    padding: 21px 14px 0 12px;
+}
+
+.choose-title {
+    display: inline-block;
+    width: 72px;
+}
+
+.task__icon {
+    vertical-align: super;
+}
+
+.entry-field {
+    width: 146px;
+    outline: none;
+}
+
+.task__button {
+    background: #67D292;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 3px 20px 0;
+    margin: 26px auto;
+    display: block;
+    border: none;
+}

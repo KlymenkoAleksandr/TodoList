@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="todolist-wraper">
+        <header class="flex-block">
+            <h1>Todo-List</h1>
+            <div class="user-photo">
+            </div>
+        </header >
+        <main>
+            <div class="task-status flex-block">
+                <div  id="stats-total" class="task-status__block total">Total: <span>0</span></div>
+                <div  id="stats-completed" class="task-status__block success">Success: <span>0</span></div>
+                <div id="stats-pending" class="task-status__block pending">Pending: <span>0</span></div>
+            </div>
+            <div class="filter-wraper">
+            <input type="text" placeholder="Filter" class="filter" name="search" id="search">
+            </div>
+            <div class="task-list" id="tasks-list">
+            </div>
+        </main>
+        <footer class="flex-block">
+            <div class="clear-all" id="clear">
+                Clear All
+                <img src="./images/garbage.png" alt="">
+            </div>
+            <div class="add-task" id="add-task">
+                Add New
+            </div>
+
+        </footer>
+    </div>
+    <div class="modal" id="modal">
+        <div class="body-task">
+            <form class="task" action="#" id="new-task-form">
+                <h2 class="task__title">Add New Task</h2>
+                <div class="task__block">
+                    <div class="task__item">
+                        <label>
+                            <img class="task__icon" src="./images/star.png" alt="star">
+                            <span class="choose-title">
+                                Title
+                            </span>
+                            <input class="entry-field" name="title" type="text" placeholder="Type title" required>
+                        </label>
+                    </div>
+                    <div class="task__item">
+                        <label>
+                            <img class="task__icon" src="./images/star.png" alt="star">
+                            <span class="choose-title">
+                                Deadline
+                            </span>
+                            <input class="entry-field" name="date" type="date" value="0000-00-00" required>
+                        </label>
+                    </div>
+                    <div class="task__item">
+                        <label">
+                            <img class="task__icon" src="./images/star.png" alt="star">
+                            <span class="choose-title">
+                                Priority
+                            </span>
+                            <select class="entry-field" name="priority" required>
+                                <option value="0" disabled selected>Choose</option>
+                                <option value="LOW">Low Priority</option>
+                                <option value="MEDIUM">Medium Priority</option>
+                                <option value="HIGH">High Priority</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button class="task__button">ADD</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="./todo.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
