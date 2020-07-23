@@ -34,7 +34,7 @@ ToDoList.prototype.findTaskById = function (id) {
         if (this.tasks[i].id === id) {
             return {
                 task: this.tasks[i],
-                index: 1
+                index: i
             };
         }
     }
